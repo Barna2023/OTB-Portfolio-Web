@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ooss T. Barnabas Portfolio</title>
+    <link rel="stylesheet" href="./style.css"></link>
+    <script src="https://kit.fontawesome.com/9d0aaa0039.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div id="header">
+     <div class="container">
+        <nav>
+            <!-- <img src="Assets/Imgs/" class="logo"> -->
+             <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+             </ul>
+             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Frontend Web Developer</p>
+         <!-- Creating a auto text to introduce myself  -->
+            <!-- <h1>Hi, I am <span id="large-screen">Ooss T. Barnabas,</span><br> <span id="phone-screen">your go-to Frontend Web Designer</span></h1> -->
+            <span class="typed-text" id="phone-screen"></span>
+            <span class="cursor">&nbsp;</span>
+        </div>
+     </div>
+   </div> 
+
+   <!-- New About Me section of the website  -->
+   <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Assets/Imgs/Pro1-new.png" alt="Profile Picture">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p id="sub-paragraph">
+                    I’m Ooss T. Barnabas, a passionate Frontend Web Developer with 3+ years of experience delivering creative and user-focused digital solutions. 
+                    My expertise lies in designing responsive, visually appealing, and accessible web interfaces tailored to client needs. 
+                    I specialize in crafting engaging brand portfolios and mentoring aspiring web designers to achieve their career goals.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('education')">Education</p>
+                </div>
+                <!-- Tab Content -->
+                <div class="tab-contents active-tab" id="skills">
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <i class="fa-brands fa-html5"></i>
+                            <h3>HTML & CSS</h3>
+                            <p>Building structured and visually appealing web pages.</p>
+                        </div>
+                        <div class="skill">
+                            <i class="fa-brands fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p>Creating interactive and dynamic web components.</p>
+                        </div>
+                        <div class="skill">
+                            <i class="fa-brands fa-react"></i>
+                            <h3>React.js</h3>
+                            <p>Developing scalable and high-performance web applications.</p>
+                        </div>
+                        <div class="skill">
+                            <i class="fa-solid fa-code-branch"></i>
+                            <h3>Git/GitHub</h3>
+                            <p>Version control and collaboration on software projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Netlight Systems - Intern</h3>
+                            <span>July 2022 - June 2023</span>
+                            <p>Committed 50-55 hours weekly to enhance programming and customer relationship skills.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Statcomm Consult and Technology - Freelancing</h3>
+                            <span>May 2023 - Present</span>
+                            <p>Delivered high-quality web projects while juggling multiple tasks with minimal supervision.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Caneto Global - Freelancing</h3>
+                            <span>Current</span>
+                            <p>Collaborating on frontend projects and mentoring new developers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><strong>1-Year Academic Program:</strong> Software Engineering, Lead City University, 2022.</li>
+                        <li><strong>Executive and Management Training:</strong> November 2020.</li>
+                        <li><strong>Google Developer's Student Club:</strong> Lead City University, Member.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+   <!-- New Service Section of the page -->
+   <div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <!-- Service 1 -->
+            <div class="service" onclick="openModal('service1', event)">
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Website Design</h2>
+                <p>Responsive and modern web designs optimized for user engagement.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Service 2 -->
+            <div class="service" onclick="openModal('service2', event)">
+                <i class="fa-solid fa-chalkboard-teacher"></i>
+                <h2>Frontend Educator</h2>
+                <p>Training programs designed for aspiring web developers.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Service 3 -->
+            <div class="service" onclick="openModal('service3', event)">
+                <i class="fa-solid fa-users"></i>
+                <h2>Collaborative Coding</h2>
+                <p>Effective team collaboration to deliver seamless web solutions.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals for Each Service -->
+<!-- Service 1 -->
+<div id="modal-service1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('service1')">&times;</span>
+        <h2>Website Design</h2>
+        <p>
+            I specialize in crafting responsive, modern websites tailored to user needs and industry standards. 
+            My designs prioritize aesthetics, usability, and performance, ensuring a seamless user experience on all devices.
+        </p>
+        <p>
+            By leveraging modern tools and frameworks, I create web solutions that are not only visually appealing but also scalable and maintainable.
+        </p>
+    </div>
+</div>
+
+<!-- Service 2 -->
+<div id="modal-service2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('service2')">&times;</span>
+        <h2>Frontend Web Development Educator</h2>
+        <p>
+            I offer structured training programs for individuals passionate about web development. 
+            My courses cover foundational to advanced topics, ensuring every learner is equipped to build robust web applications.
+        </p>
+        <p>
+            Whether in-person or online, I prioritize flexibility, hands-on learning, and real-world application to foster career growth in the tech industry.
+        </p>
+    </div>
+</div>
+
+<!-- Service 3 -->
+<div id="modal-service3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('service3')">&times;</span>
+        <h2>Collaborative Coding</h2>
+        <p>
+            Collaboration is key to building innovative solutions. I thrive in team environments, contributing expertise in frontend development and problem-solving.
+        </p>
+        <p>
+            By working closely with other developers, I ensure seamless integration of ideas, timely delivery, and the production of high-quality software.
+        </p>
+    </div>
+</div>
+
+   <!-- Portfolio  -->
+   <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <p class="sub-heading">This portfolio is a mix of personal and client work</p>
+        <div class="work-list">
+            <!-- Project 1 -->
+            <div class="work" onclick="openModal('project1', event)">
+                <img src="Assets/Imgs/web-design.jpg" alt="One Day@Time Task Manager">
+                <div class="layer">
+                    <h3>One Day@Time Task Manager</h3>
+                    <a href="#">View</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="work" onclick="openModal('project2', event)">
+                <img src="Assets/Imgs/freelancing.jpg" alt="My Portfolio">
+                <div class="layer">
+                    <h3>Ooss T. Barnabas Portfolio</h3>
+                    <a href="#">View</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="work" onclick="openModal('project3', event)">
+                <img src="Assets/Imgs/training2.jpg" alt="Training for T21 Services">
+                <div class="layer">
+                    <h3>Training for T21 Services</h3>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- Modal for Project 1 -->
+    <div id="modal-project1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1')">&times;</span>
+            <h2>One Day@Time Task Manager</h2>
+            <img src="Assets/Imgs/One-Day@Time.PNG" alt="Project Image" class="modal-image">
+            <p><strong>Purpose:</strong> Manage tasks as a freelancer, enabling efficient scheduling and timely completion of deliverables.</p>
+            <p><strong>Skills:</strong> HTML5, CSS3, JavaScript, Web API (Local Storage).</p>
+            <p><strong>Process:</strong> Designed a structured layout for easy task categorization, implemented persistent data storage using Web APIs, and ensured responsive design for usability on various devices.</p>
+        </div>
+    </div>
+    
+    <!-- Modal for Project 2 -->
+    <div id="modal-project2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2')">&times;</span>
+            <h2>Ooss T. Barnabas Portfolio</h2>
+            <img src="Assets/Imgs/portfolio-website.PNG" alt="Project Image" class="modal-image">
+            <p><strong>Purpose:</strong> Showcase my work and expertise as a frontend developer.</p>
+            <p><strong>Skills:</strong> HTML5, CSS3, JavaScript, JSON, Google Spreadsheets, SQL.</p>
+            <p><strong>Process:</strong> Designed the layout, conducted a personal photo shoot for professionalism, and integrated responsive design with optimized data management using JSON and Google Spreadsheets.</p>
+        </div>
+    </div>
+    
+    <!-- Modal for Project 3 -->
+    <div id="modal-project3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3')">&times;</span>
+            <h2>Training for T21 Services</h2>
+            <img src="Assets/Imgs/training2.jpg" alt="Project Image" class="modal-image">
+            <p><strong>Purpose:</strong> Train a group of students in frontend web development.</p>
+            <p><strong>Skills:</strong> HTML5, CSS3, JavaScript, Pedagogical Techniques.</p>
+            <p><strong>Process:</strong> Conducted hands-on sessions focusing on foundational frontend concepts, building projects collaboratively, and empowering students with problem-solving skills.</p>
+        </div>
+    </div>
+    
+    <!-- How can I use the btn for see more up there <a href="#" class="btn">See more</a> -->
+    <!-- The Contact Section of the Website -->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>oosstbarnabas@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+2349067521447</p>
+                    <p><i class="fa-brands fa-whatsapp"></i></i>+2348165971706</i></p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/OossT.Barnabas" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ooss-t-barnabas" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://discord.gg/yourserver" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                    <a href="Assets/Doc/My-Tech-CV.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="container">
+                <!-- Profile Section -->
+                <div class="footer-profile">
+                    <img src="Assets/Imgs/Pro4-rbg.png" alt="Ooss T. Barnabas" class="rounded-img">
+                    <p>"Your success is my priority. Thank you for trusting me to bring your visions to life!"</p>
+                </div>
+        
+                <!-- Social Links Section -->
+                <div class="footer-social">
+                    <h3>Connect with me</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/OossT.Barnabas" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ooss-t-barnabas" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://discord.gg/yourserver" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://wa.me/+2348165971706" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Newsletter Section -->
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to my newsletter to get the latest updates on my projects and tutorials!</p>
+                    <form action="https://docs.google.com/forms/d/e/your-google-form-id/formResponse" method="POST">
+                        <input type="email" name="entry.yourEmailField" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+        
+                <!-- Quick Links Section -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Copyright Section -->
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Ooss T. Barnabas | All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+     <script src="./app.js"></script>
+   <!-- Create a Script that handles the form such that I recieve responses in my linked google sheet -->
+   <!-- Script that handles the About Me Section  -->
+   <script>
+       const tabLinks = document.querySelectorAll(".tab-links");
+       const tabContents = document.querySelectorAll(".tab-contents");
+
+        function openTab(tabName) {
+            tabLinks.forEach((link) => link.classList.remove("active-link"));
+            tabContents.forEach((content) => content.classList.remove("active-tab"));
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+       
+   </script>
+   <!-- Script that handles the Modal for the Service section  -->
+   <script>
+   function openModal(serviceId, event) {
+    // Prevent default behavior (e.g., scrolling caused by anchor tags)
+    if (event) {
+        event.preventDefault();
+    }
+
+    // Display the modal
+    const modal = document.getElementById(`modal-${serviceId}`);
+    if (modal) {
+        modal.style.display = "flex";
+    }
+  }
+
+    function closeModal(serviceId) {
+    // Hide the modal
+    const modal = document.getElementById(`modal-${serviceId}`);
+    if (modal) {
+        modal.style.display = "none";
+    }
+   } 
+    </script>
+    <!-- The script for the portfolio section of the Website -->
+   <script> 
+    function openModal(projectId, event) {
+        // Prevent default behavior
+        if (event) {
+            event.preventDefault();
+        }
+    
+        // Open the modal
+        const modal = document.getElementById(`modal-${projectId}`);
+        if (modal) {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Disable background scrolling
+        }
+    }
+    
+    function closeModal(projectId) {
+        // Close the modal
+        const modal = document.getElementById(`modal-${projectId}`);
+        if (modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Enable background scrolling
+        }
+    }
+   </script>
+
+   <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+   </script>
+</body>
+</html>
